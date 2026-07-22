@@ -46,12 +46,24 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+.logo {
+    display: flex;
+    align-items: center; /* Alinea verticalmente al centro */
+    gap: 10px;           /* Espacio entre la imagen y el texto */
+    text-decoration: none;
+}
 
 .logo img {
     width: 70px;
     height: 70px;
     object-fit: contain;
     display: block;
+}
+.nombre-restaurante {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #000000; /* O el color principal de tu header */
+    white-space: nowrap; /* Evita que el nombre se rompa en dos líneas */
 }
 
 .main-nav a {
@@ -486,7 +498,7 @@ main {
     color: var(--secondary-color);
 }
 
-/* ➕ Botón con símbolo mas (+) */
+/*  Botón con símbolo mas (+) */
 .btn-agregar {
     background-color: var(--acento);
     color: var(--white);
@@ -505,4 +517,145 @@ main {
 .btn-agregar:hover {
     background-color: var(--acento-hover);
     transform: scale(1.08);
+}
+/* ==========================================
+   ESTILOS PARA EL MODAL (VENTANA FLOTANTE)
+   ========================================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Clase para activar el modal con JS */
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-icono {
+    font-size: 3rem;
+    color: #10b981; /* Verde éxito */
+    margin-bottom: 1rem;
+}
+
+.modal-content h3 {
+    margin-bottom: 0.5rem;
+    color: #222;
+}
+
+.modal-content p {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-cerrar-modal {
+    background-color: var(--acento);
+    color: var(--white);
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-cerrar-modal:hover {
+    background-color: var(--acento-hover);
+}
+
+/* ==========================================
+   ESTILOS PARA EL FORMULARIO DE RESERVACIÓN
+   ========================================== */
+.form-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.2rem;
+    text-align: left;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.7rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--acento);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: var(--acento);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: var(--acento-hover);
 }
