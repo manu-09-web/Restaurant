@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // ---- FORMULARIO DE CONTACTO ----
+
+    // ---- 1. FORMULARIO DE CONTACTO / AWS ----
     const form = document.getElementById("form-contacto");
     const respuesta = document.getElementById("form-response");
 
@@ -32,37 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // ---- ENVÍO AL BACKEND ----
-            try {
-                //const res = await fetch("http://localhost:7000/api/formulario", //PARA LA BD LOCAL
-                const res = await fetch("https://formularioup.duckdns.org/api/formulario",  { //PARA LA BD CORRIENDO EN AWS
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(datos)
-                });
-
-                if (res.ok) {
-                    respuesta.textContent = `¡Gracias por tu interés, ${datos.nombre}! Hemos recibido tu solicitud. Pronto nos comunicaremos contigo al correo ${datos.correo}.`;
-                    respuesta.className = 'hidden-message success';
-                    respuesta.classList.remove("hidden-message");
-                    form.reset();
-                } else {
-                    const error = await res.text();
-                    respuesta.textContent = "Error al enviar: " + error;
-                    respuesta.className = 'hidden-message';
-                    respuesta.style.color = "red";
-                    respuesta.classList.remove("hidden-message");
-                }
-            } catch (err) {
-                respuesta.textContent = "No se pudo conectar con el servidor. ¿Está corriendo el backend?";
-                respuesta.style.color = "red";
-                respuesta.classList.remove("hidden-message");
-                console.error(err);
-            }
+            
         });
     }
 
-    // ---- SLIDER DE IMÁGENES ----
+    // ---- 2. SLIDER DE IMÁGENES ----
     const anterior = document.getElementById('anterior');
     const siguiente = document.getElementById('siguiente');
     const slider = document.querySelector('.imagenes-slide');
@@ -90,4 +65,32 @@ document.addEventListener('DOMContentLoaded', () => {
             mostrarImagen(indiceActual);
         }, 3000);
     }
+
+    // ---- 3. MODAL DEL MENÚ (BOTONES "+") ----
+    const modal = document.getElementById('modalAgregar');
+    const modalMensaje = document.getElementById('modalMensaje');
+    const botonesAgregar = document.querySelectorAll('.btn-agregar');
+
+    if (modal && botonesAgregar.length > 0) {
+        botonesAgregar.forEach(boton => {
+            boton.addEventListener('click', (e) => {
+                const card = e.target.closest('.menu-card');
+                if (card) {
+                    const nombrePlatillo = card.querySelector('h3').textContent;
+                    if (modalMensaje) {
+                        modalMensaje.textContent = `Has agregado "${nombrePlatillo}" a tu pedido.`;
+                    }
+                    modal.classList.add('active');
+                }
+            });
+        });
+
+        // Evento para cerrar haciendo clic fuera o en botón
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal || e.target.classList.contains('btn-cerrar-modal')) {
+                modal.classList.remove('active');
+            }
+        });
+    }
+
 });
