@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>253391_Examen</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container header-flex">
+            <!-- Cambié el texto por la estructura de tu Figma -->
+            <div class="logo">
+                <img src="/imagenesComida/food-and-restaurant.png" alt="logo">
+            </div>
+            
+            <nav class="main-nav">
+                <a href="/index.html" class="active">Home</a>
+                <a href="/paginas/menu.html">Menú</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <!-- Carrusel -->
+        <div class="carrusel-contenedor">
+            <button class="boton-carrusel" id="anterior">&#10094;</button>
+            <div class="imagenes-slide">
+                <img src="/imagenesComida/i1.jpg" class="activa">
+                <img src="/imagenesComida/i2.jpg">
+                <img src="/imagenesComida/i3.webp">
+                <img src="/imagenesComida/i4.jpg">
+            </div>
+            <button class="boton-carrusel" id="siguiente">&#10095;</button>
+        </div>
+
+        <!-- Sección Cómo Ordenar -->
+        <section id="como-ordenar">
+            <h2 class="titulo-seccion">¿Cómo puedes ordenar?</h2>
+            <div class="pasos-grid">
+                <div class="paso-card">
+                    <img src="/imagenesComida/seleccione.png" alt="Seleccionar Comida" width="60">
+                    <p>Seleccionar comida</p>
+                </div>
+                <div class="paso-card">
+                    <img src="/imagenesComida/ingredientes.png" alt="Elige Ingredientes" width="40">
+                    <p>Elige tus ingredientes</p>
+                </div>
+                <div class="paso-card">
+                    <img src="/imagenesComida/conversacion.png" alt="Envíanos Datos" width="40">
+                    <p>Envíanos tus datos</p>
+                </div>
+                <div class="paso-card">
+                    <img src="/imagenesComida/repartidor.png" alt="Entrega" width="40">
+                    <p>Entrega de tu comida</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Oferta Especial -->
+        <section class="oferta-container">
+            <h2 class="titulo-seccion-oferta">Oferta Especial</h2>
+
+            <div class="oferta-flex">
+                <!--  Ícono de filtro en la esquina -->
+                <i class="fas fa-filter icono-filtro"></i>
+
+                <div class="oferta-img">
+                    <img class="ImagenD" src="/imagenesComida/i5.jpg" alt="Platillo Especial">
+                </div>
+
+                <div class="oferta-detalle">
+                    <h1>Oferta Especial</h1>
+                    <h3>Este es nuestro platillo que cuenta con un descuento del 20% en tu compra de 2 ordenes en adelante, aprovéchala y no te quedes con las ganas.</h3>
+
+                    <!-- Botón con carrito de compras -->
+                    <button class="btn-submit btn-ordenar">
+                        Guardar<i class="fas fa-shopping-cart"></i> 
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Comentarios -->
+        <section class="comentarios-section">
+            <h2 class="titulo-seccion">Comentarios</h2>
+            <div class="comentarios-grid">
+                <div class="comentario-card">
+                    <div class="comentario-header">
+                        <img src="/imagenesComida/actriz.png" class="avatar">
+                        <h4>Andia Jorida</h4>
+                    </div>
+                    <p>Excelente servicio y sabor espectacular. Totalmente recomendado para ir en familia.</p>
+                    <div class="estrellas">★★★★★</div>
+                    <h6>4 views</h6>
+                </div>
+                <div class="comentario-card">
+                    <div class="comentario-header">
+                        <img src="/imagenesComida/hombre.png" class="avatar">
+                        <h4>William Henry</h4>
+                    </div>
+                    <p>La comida llegó súper rápido y caliente. Los ingredientes se nota que son del día.</p>
+                    <div class="estrellas">★★★★★</div>
+                    <h6>5 views</h6>
+                </div>
+            </div>
+        </section>
+
+    </main>
+<!-- Footer Institucional -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            
+            <!-- Columna 1: Tarjetas -->
+            <div class="footer-col">
+                <h4>Aceptamos Tarjetas</h4>
+                <div class="metodos-pago">
+                    <img src="https://images.icon-icons.com/2341/PNG/512/visa_payment_method_card_icon_142729.png" alt="Visa" width="40">
+                    <img src="https://e7.pngegg.com/pngimages/130/79/png-clipart-mastercard-credit-card-mastercard-logo-love-text.png" alt="Mastercard" width="40">
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/070/730/254/small/paypal-logo-in-transparent-background-popular-online-payment-method-icon-free-png.png" alt="Paypal" width="80">
+                </div>
+            </div>
+
+            <!-- Columna 2: Redes Sociales (Centrada) -->
+            <div class="footer-col col-siguenos">
+                <h4>Síguenos</h4>
+                <div class="social-links">
+                    <a href="https://facebook.com/UPChiapas" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+                    <a href="https://instagram.com/UPChiapas" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+                </div>
+            </div>
+
+            <!-- Columna 3: Dirección -->
+            <div class="footer-col col-direc">
+                <h4>Dirección</h4>
+                <p>Carretera Tuxtla Gutiérrez - Portillo Zaragoza Km 21+500<br>Suchiapa, Chiapas</p>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="/JS/javaS.js"></script>
+</body>
+</html>
