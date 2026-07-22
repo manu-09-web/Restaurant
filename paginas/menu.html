@@ -15,10 +15,12 @@
         <div class="container header-flex">
             <div class="logo">
                 <img src="/imagenesComida/food-and-restaurant.png" alt="logo">
+                <span class="nombre-restaurante">Mi Restaurant</span>
             </div>
             <nav class="main-nav">
-                <a href="../index.html">Home</a>
-                <a href="menu.html" class="active">Menú</a>
+                <<a href="/index.html" ><img src="/imagenesComida/casa.png" width="20">Home</a>
+                <a href="/paginas/menu.html" class="active"><img src="/imagenesComida/menu.png" width="16">Menú</a>
+                <a href="contacto.html">Contacto</a>
             </nav>
         </div>
     </header>
@@ -307,8 +309,8 @@
             <div class="footer-col col-siguenos">
                 <h4>Síguenos</h4>
                 <div class="social-links">
-                    <a href="https://facebook.com/UPChiapas" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
-                    <a href="https://instagram.com/UPChiapas" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+                    <a href="https://www.facebook.com/share/1CXzHNmsDx/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+                    <a href="https://www.instagram.com/upchiapas?igsh=MzJrNGNxem1tazh0" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
                 </div>
             </div>
 
@@ -319,5 +321,16 @@
         </div>
     </footer>
 
+    <!-- MODAL DE CONFIRMACIÓN -->
+    <div class="modal-overlay" id="modalAgregar">
+        <div class="modal-content">
+            <i class="fas fa-check-circle modal-icono"></i>
+            <h3>¡Agregado al Pedido!</h3>
+            <p id="modalMensaje">El platillo se ha añadido a tu orden correctamente.</p>
+            <button class="btn-cerrar-modal">Aceptar</button>
+        </div>
+    </div>
+
+    <script src="../JS/javaS.js"></script>
 </body>
 </html>
